@@ -3,7 +3,7 @@ makerbit.onUltrasonicObjectDetected(10, DistanceUnit.CM, function () {
 })
 radio.setGroup(107)
 makerbit.connectUltrasonicDistanceSensor(DigitalPin.P5, DigitalPin.P8)
+radio.sendString("obstacle")
 basic.forever(function () {
-    radio.sendString("obstacle")
     radio.sendString("" + (makerbit.getUltrasonicDistance(DistanceUnit.CM)))
 })
